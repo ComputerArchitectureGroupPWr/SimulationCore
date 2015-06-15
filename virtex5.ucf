@@ -1,0 +1,44 @@
+# Configuracja led'ów na virtex 5
+# Bank 3, Vcco=2.5V, No DCI
+NET "led[0]" LOC = H18;
+# Bank 3, Vcco=2.5V, No DCI
+NET "led[1]" LOC = L18;
+# Bank 3, Vcco=2.5V, No DCI
+NET "led[2]" LOC = G15;
+# Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+NET "led[3]" LOC = AD26;
+# Bank 3, Vcco=2.5V, No DCI
+NET "led[4]" LOC = G16;
+# Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+NET "led[5]" LOC = AD25;
+# Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+NET "led[6]" LOC = AD24;
+# Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+NET "led[7]" LOC = AE24;
+
+NET "CLKMULOUT"  LOC="AG23";  # Bank 2, Vcco=3.3V
+NET "CLK2XOUT"   LOC="AG12";  # Bank 2, Vcco=3.3V
+
+# Konfiguracja serail portu na viretx 5
+# Bank 20, Vcco=3.3V, DCI using 49.9 ohm resistors
+NET "rs232rx" LOC = AG15;
+# Bank 20, Vcco=3.3V, DCI using 49.9 ohm resistors
+NET "rs232tx" LOC = AG20;
+
+# Konfiguracja przycisku resetu
+# Bank 18, Vcco=3.3V, No DCI
+NET "rst" LOC = U8;
+
+# Konfiguracja clocka 100 Mhz
+# Bank 4, Vcco=3.3V, No DCI
+NET "clk" LOC = L19;
+
+# PlanAhead Generated physical constraints 
+
+INST "InstFeqDiv" AREA_GROUP = "SimCore";
+INST "InstHeatersLogic" AREA_GROUP = "SimCore";
+INST "InstRS232" AREA_GROUP = "SimCore";
+INST "InstThermometersLogic" AREA_GROUP = "SimCore";
+AREA_GROUP "SimCore" RANGE=SLICE_X0Y0:SLICE_X47Y9;
+AREA_GROUP "SimCore" RANGE=DSP48_X0Y0:DSP48_X0Y3;
+AREA_GROUP "SimCore" RANGE=RAMB36_X0Y0:RAMB36_X1Y1;
